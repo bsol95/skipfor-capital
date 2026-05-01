@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skipfor Capital Partners</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #07090f;
+      --surface:   rgba(255,255,255,0.038);
+      --border:    rgba(255,255,255,0.08);
+      --border-hov:rgba(255,255,255,0.16);
+      --gold:      #c8a96e;
+      --gold-dim:  rgba(200,169,110,0.35);
+      --text:      #f0ede6;
+      --text-mid:  rgba(240,237,230,0.65);
+      --text-dim:  rgba(240,237,230,0.38);
+    }
+
+    html, body {
+      min-height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 96px 80px 64px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      text-align: center;
+      margin-bottom: 72px;
+    }
+
+    .logo-wrap {
+      width: 120px;
+      height: 120px;
+      margin: 24px auto 28px;
+    }
+
+    .logo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      mix-blend-mode: screen;
+    }
+
+    .logo-monogram {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      border: 1px solid var(--gold-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--gold);
+    }
+
+    .firm-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: clamp(24px, 3.8vw, 36px);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 14px;
+      line-height: 1.2;
+    }
+
+    .firm-sub {
+      font-size: 10px;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      font-weight: 400;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      width: 100%;
+      max-width: 580px;
+      position: relative;
+      height: 1px;
+      background: var(--border);
+      margin-bottom: 80px;
+    }
+    .divider::after {
+      content: '';
+      position: absolute;
+      top: -3px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold-dim);
+      border: 1px solid var(--gold);
+      opacity: 0.6;
+    }
+
+    /* ── Investment Sections ── */
+    .investments {
+      width: 100%;
+      max-width: 680px;
+      display: flex;
+      flex-direction: column;
+      gap: 64px;
+    }
+
+    .inv-group {}
+
+    .group-label {
+      font-size: 9px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--text);
+      opacity: 0.75;
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .logo-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 24px;
+      min-width: 120px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.2s ease, background 0.2s ease;
+      cursor: default;
+    }
+
+    .logo-card:hover {
+      border-color: var(--border-hov);
+      background: rgba(255,255,255,0.055);
+    }
+
+    .logo-card img {
+      object-fit: contain;
+      opacity: 0.9;
+      transition: opacity 0.2s ease;
+    }
+
+    .logo-card:hover img {
+      opacity: 1;
+    }
+
+    .logo-gruns  { height: 42px; width: auto; max-width: 180px; }
+    .logo-popwtr { height: 38px; width: auto; max-width: 180px; }
+    .logo-serona { height: 45px; width: auto; max-width: 180px; }
+
+    .card-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--text-mid);
+      white-space: nowrap;
+      transition: color 0.2s ease;
+    }
+
+    .logo-card:hover .card-name {
+      color: var(--text);
+    }
+
+    .others-pill {
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      padding: 10px 16px;
+    }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: 96px;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      font-weight: 400;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 520px) {
+      body { padding: 72px 20px 48px; }
+      .logo-card { min-width: 130px; padding: 18px 24px; }
+      .card-name { font-size: 15px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="logo-wrap">
+      <img src="logos/fund/ChatGPT Image Apr 30, 2026, 10_07_24 PM.png" alt="Skipfor Capital Partners">
+    </div>
+    <h1 class="firm-name">Skipfor Capital Partners</h1>
+    <p class="firm-sub">Multi-Family Office &nbsp;&middot;&nbsp; Consumer Venture Capital</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="investments">
+
+    <div class="inv-group">
+      <p class="group-label">Consumer</p>
+      <div class="logo-row">
+
+        <div class="logo-card">
+          <img src="logos/consumer/Gruns.png" alt="Gruns" class="logo-gruns">
+        </div>
+
+        <div class="logo-card">
+          <img src="logos/consumer/Serona.png" alt="Serona" class="logo-serona">
+        </div>
+
+        <div class="logo-card">
+          <img src="logos/consumer/Popwtr.png" alt="POPWTR" class="logo-popwtr">
+        </div>
+
+      </div>
+    </div>
+
+    <div class="inv-group">
+      <p class="group-label">Funds</p>
+      <div class="logo-row">
+
+        <div class="logo-card">
+          <!-- <img src="logos/fund/creek-drive.svg" alt="Creek Drive Capital"> -->
+          <span class="card-name">Creek Drive Capital</span>
+        </div>
+
+        <div class="logo-card">
+          <!-- <img src="logos/fund/sara-capital.svg" alt="Sara Capital Partners"> -->
+          <span class="card-name">Sara Capital Partners</span>
+        </div>
+
+        <div class="logo-card">
+          <span class="card-name">Netz</span>
+        </div>
+
+        <div class="logo-card">
+          <span class="card-name">Timshel</span>
+        </div>
+
+        <div class="logo-card">
+          <span class="card-name">HFI</span>
+        </div>
+
+        <div class="logo-card">
+          <span class="card-name">Deca</span>
+        </div>
+
+        <div class="logo-card">
+          <span class="card-name">Ironclad</span>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <footer>skipfor.capital</footer>
+
+</body>
+</html>
