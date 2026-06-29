@@ -208,15 +208,40 @@
       font-weight: 400;
     }
 
+    /* ── Investor login ── */
+    .investor-login {
+      position: fixed;
+      top: 28px;
+      right: 36px;
+      font-size: 10px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-decoration: none;
+      font-weight: 400;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 9px 18px;
+      transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+    .investor-login:hover {
+      color: var(--gold);
+      border-color: var(--gold-dim);
+      background: rgba(200, 169, 110, 0.06);
+    }
+
     /* ── Responsive ── */
     @media (max-width: 520px) {
       body { padding: 72px 20px 48px; }
       .logo-card { min-width: 130px; padding: 18px 24px; }
       .card-name { font-size: 15px; }
+      .investor-login { top: 16px; right: 16px; padding: 7px 14px; letter-spacing: 0.18em; }
     }
   </style>
 </head>
 <body>
+
+  <a href="https://portal.skipfor.capital" class="investor-login">Investor Login &nbsp;&rarr;</a>
 
   <div class="hero">
     <div class="logo-wrap">
